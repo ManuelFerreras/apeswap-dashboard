@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-ui-colors-background: #0B0B0B;
+  --theme-ui-colors-backgroundDisabled: #3c3742;
+  --theme-ui-colors-navbar: #212121;
+  --theme-ui-colors-body: #0B0B0B;
+  --theme-ui-colors-lvl1: #383838;
+  --theme-ui-colors-lvl2: #424242;
+  --theme-ui-colors-primaryBright: #FAFAFA;
+  --theme-ui-colors-primaryDark: #0B0B0B;
+  --theme-ui-colors-success: #38A611;
+  --theme-ui-colors-error: #DF4141;
+  --theme-ui-colors-yellow: #FFB300;
+  --theme-ui-colors-info: #FAFAFA;
+  --theme-ui-colors-primaryButtonDisable: rgba(241, 234, 218, 0.5);
+  --theme-ui-colors-secondaryButtonDisableBg: rgba(33, 33, 33, 0.5);
+  --theme-ui-colors-secondaryButtonDisableColor: #F1EADA;
+  --theme-ui-colors-dividerColor: #333333;
+  --theme-ui-colors-textareaColor: #FAFAFA;
+  --theme-ui-colors-text: #FAFAFA;
+  --theme-ui-colors-textDisabled: #666171;
+  --theme-ui-colors-heading: #FAFAFA;
+  --theme-ui-colors-black: #000000;
+  --theme-ui-colors-gradient: linear-gradient(53.53deg, #A16552 15.88%, #E1B242 92.56%);
+  --theme-ui-colors-smartGradient: linear-gradient(94.44deg, #BA801E -9.73%, #E7CF67 40.14%, #BA801E 93.01%);
+  --theme-ui-colors-white1: #0B0B0B;
+  --theme-ui-colors-white2: #212121;
+  --theme-ui-colors-white3: #383838;
+  --theme-ui-colors-white4: #424242;
+  --theme-ui-colors-radioChecked: #0B0B0B;
+  --theme-ui-colors-navMenuLogo: #5E5E5E;
+  --theme-ui-colors-input: #FAFAFA;
+  --theme-ui-colors-footer: #0B0B0B;
+  --theme-ui-colors-primaryGray: #4D40407F;
+  --theme-ui-colors-gray: #7A7A7A;
+  --theme-ui-colors-brown: #4D4040;
+  --theme-ui-colors-hoveredYellow: #FFDA00;
+  --theme-ui-colors-hoveredSuccess: #38A611B3;
+  --theme-ui-colors-hoveredDanger: #DF4141B3;
+  --theme-ui-colors-listTagTextColor-launch: #D53131;
+  --theme-ui-colors-listTagTextColor-reserve: #276810;
+  --theme-ui-colors-listTagTextColor-liquidity: #1955AF;
+  --theme-ui-colors-listTagBg-ape: linear-gradient(99.09deg, rgba(161, 101, 82, 0.8) 0%, rgba(255, 179, 0, 0.8) 106.96%);
+  --theme-ui-colors-listTagBg-uni: rgba(213, 49, 113, 0.8);
+  --theme-ui-colors-listTagBg-ark: rgba(208, 126, 90, 0.8);
+  --theme-ui-colors-listTagBg-launch: rgba(213, 49, 49, 0.2);
+  --theme-ui-colors-listTagBg-reserve: rgba(90, 208, 109, 0.2);
+  --theme-ui-colors-listTagBg-liquidity: rgba(60, 106, 181, 0.19);
+  --theme-ui-colors-listTagBg-hot: #DF4141;
+  --theme-ui-colors-listTagBg-new: #38A611;
+  --theme-ui-colors-listTagBg-auto: #DF4141;
+  --theme-ui-colors-listTagBg-max: #38A611;
+  --theme-ui-colors-home-c1: #1c1c1c;
+  --theme-ui-colors-home-c2: #161616;
+  --theme-ui-colors-home-c3: #141312;
+  --theme-ui-colors-home-cShadow: 0 0 200px rgb(19 18 17);
+  --theme-ui-colors-home-hideCircles: -40px 0px 50px 80px #0B0B0B;
+  --theme-ui-colors-home-title: linear-gradient(286.95deg, rgba(255, 179, 0, 0.6) 33.2%, rgba(0, 0, 0, 0) 112.36%),#FAFAFA;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--theme-ui-colors-home-c3);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-ui-colors-primaryBright);
+  border-radius: 5px;
+}

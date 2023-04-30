@@ -1,0 +1,70 @@
+.tokenCard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    background: var(--theme-ui-colors-white3);
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    padding: 12px 24px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.tokenCard > div {
+    align-self: center;
+}
+
+.tokenCard:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    background: var(--theme-ui-colors-white4);
+}
+
+.tokenLogo {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tokenLogoImage {
+    border-radius: 50%;
+}
+
+.tokenLabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--theme-ui-colors-textDisabled);
+}
+
+.tokenPropValue {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--theme-ui-colors-text);
+}
+
+.copyDiv {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+}
+
+.copyButton {
+    position: absolute;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* media query */
+@media screen and (max-width: 768px) {
+    .tokenCard {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}

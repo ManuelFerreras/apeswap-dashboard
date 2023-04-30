@@ -1,0 +1,28 @@
+.connectLabel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-size: 70px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--theme-ui-colors-textDisabled);
+    opacity: 0.1;
+    cursor: default;
+    user-select: none;
+}
+
+.dashboardLabel {
+    font-size: 64px;
+    line-height: 80px;
+    font-weight: 700;
+    background: var(--theme-ui-colors-home-title);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
