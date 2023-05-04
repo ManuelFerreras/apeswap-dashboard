@@ -1,7 +1,6 @@
 import type { AddEthereumChainParameter } from '@web3-react/types'
 import { JsonRpcProvider } from 'ethers'
 
-
 const ETH: AddEthereumChainParameter['nativeCurrency'] = {
   name: 'Ether',
   symbol: 'ETH',
@@ -46,21 +45,18 @@ export function getAddChainParameters(chainId: number): AddEthereumChainParamete
   }
 }
 
-const getInfuraUrlFor = (network: string) =>
-  process.env.infuraKey ? `https://${network}.infura.io/v3/${process.env.infuraKey}` : undefined
-const getAlchemyUrlFor = (network: string) =>
-  process.env.alchemyKey ? `https://${network}.alchemyapi.io/v2/${process.env.alchemyKey}` : undefined
+const getInfuraUrlFor = (network: string) => process.env.infuraKey? `https://${network}.infura.io/v3/${process.env.infuraKey}` : undefined;
 
 type ChainConfig = { [chainId: number]: BasicChainInformation | ExtendedChainInformation }
 
 export const MAINNET_CHAINS: ChainConfig = {
   1: {
-    urls: [getInfuraUrlFor('mainnet'), getAlchemyUrlFor('eth-mainnet'), 'https://cloudflare-eth.com'].map((url) => url || '').filter(Boolean),
+    urls: [getInfuraUrlFor('mainnet'), 'https://cloudflare-eth.com'].map((url) => url || '').filter(Boolean),
     name: 'Mainnet',
     chainLogo: '/images/chains/ethereum-logo.png',
   },
   56: {
-    urls: [getInfuraUrlFor('bsc-mainnet'), getAlchemyUrlFor('bsc-mainnet'), 'https://bsc-dataseed.binance.org'].map((url) => url || '').filter(Boolean),
+    urls: [getInfuraUrlFor('bsc-mainnet'), 'https://bsc-dataseed.binance.org'].map((url) => url || '').filter(Boolean),
     name: 'Binance Smart Chain Mainnet',
     nativeCurrency: {
         name: 'Binance Chain Native Token',
@@ -88,14 +84,14 @@ export const MAINNET_CHAINS: ChainConfig = {
 
 export const TESTNET_CHAINS: ChainConfig = {
     40: {
-        urls: [getInfuraUrlFor('rpc'), getAlchemyUrlFor('eth-ropsten'), 'https://ropsten.infura.io/v3/'].map((url) => url || '').filter(Boolean),
+        urls: [getInfuraUrlFor('rpc'), 'https://ropsten.infura.io/v3/'].map((url) => url || '').filter(Boolean),
         name: 'Ropsten',
         nativeCurrency: ETH,
         blockExplorerUrls: ['https://ropsten.etherscan.io'],
         chainLogo: '/images/chains/ethereum-logo.png',
     },
     97: {
-        urls: [getInfuraUrlFor('rpc'), getAlchemyUrlFor('eth-rinkeby'), 'https://rinkeby.infura.io/v3/'].map((url) => url || '').filter(Boolean),
+        urls: [getInfuraUrlFor('rpc'), 'https://rinkeby.infura.io/v3/'].map((url) => url || '').filter(Boolean),
         name: 'Rinkeby',
         nativeCurrency: ETH,
         blockExplorerUrls: ['https://rinkeby.etherscan.io'],
@@ -130,7 +126,7 @@ export const URLS: { [chainId: number]: string[] } = Object.keys(CHAINS).reduce<
 
 export const networkProviders: Record<number, JsonRpcProvider> = {
   1: new JsonRpcProvider(`https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`),
-  // 40: new JsonRpcProvider(`https://goerli.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`),
+  // 40: new JsonRpcProvider(`https://ropsten.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`),
   56: new JsonRpcProvider("https://bsc-dataseed.binance.org"),
   97: new JsonRpcProvider("https://data-seed-prebsc-1-s1.binance.org:8545"),
   137: new JsonRpcProvider("https://polygon-rpc.com"),

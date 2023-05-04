@@ -1,20 +1,18 @@
 export type Variants = 'primary' | 'secondary';
 
-export type TokenInfo = {
+type BaseToken = {
     name: string;
     symbol: string;
     address: string;
     decimals: number;
     logoURI: string;
+}
+
+export type TokenInfo = BaseToken & {
     chainId: number;
 };
 
-export type Token = {
-    symbol: string; 
+export type Token = BaseToken & {
     balance: string, 
     network: number, 
-    logoURI: string, 
-    decimals: number, 
-    address: string, 
-    name: string
 }

@@ -31,7 +31,7 @@ const DashboardPage: FC<DashboardPageProps> = ({
             variant={'primary'}
             />
 
-            <AnimatePresence mode='wait'>
+            <AnimatePresence>
                 {
                     isActive && accounts && accounts[0] && ( 
                         <m.h2 

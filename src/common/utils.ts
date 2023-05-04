@@ -28,25 +28,31 @@ export async function getBalance(provider: JsonRpcProvider, token: TokenInfo, wa
 export async function getAllBalances(walletAddress: string): Promise<Token[]> {
     const allBalances: Promise<Token>[] = [];
   
-    for (const token of TOKENLIST.tokens) {
-      const provider = networkProviders[token.chainId];
-      if (!provider) {
-        continue;
-      }
-  
-      allBalances.push(
-        getBalance(provider, token, walletAddress).then(balance => ({
-          symbol: token.symbol,
-          balance,
-          network: token.chainId,
-          logoURI: token.logoURI,
-          decimals: token.decimals,
-          address: token.address,
-          name: token.name
-        }))
-      );
+    try {
+      for (const token of TOKENLIST.tokens) {
+        const provider = networkProviders[token.chainId];
+        if (!provider) {
+          continue;
+        }
+    
+        allBalances.push(
+          getBalance(provider, token, walletAddress).then(balance => ({
+            symbol: token.symbol,
+            balance,
+            network: token.chainId,
+            logoURI: token.logoURI,
+            decimals: token.decimals,
+            address: token.address,
+            name: token.name
+          }))
+        );
 
+      }
+
+      return Promise.all(allBalances);
+
+    } catch (error) {
+      console.debug(error);
+      return [];
     }
-  
-    return Promise.all(allBalances);
   }

@@ -62,7 +62,7 @@ const Header: FC<HeaderProps> = ({
                 setRetrievingBalances(false);
             })
             .catch((error) => {
-                console.log(error);
+                console.debug(error);
                 setRetrievingBalances(false);
             })
         }
@@ -70,6 +70,8 @@ const Header: FC<HeaderProps> = ({
 
     useEffect(() => {
         const interval = setInterval(() => {
+            console.debug("Retrieving balances...");
+
             if(!retrievingBalances && isActive && accounts) {
                 setRetrievingBalances(true);
                 getAllBalances(accounts[0])
